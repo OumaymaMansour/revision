@@ -98,23 +98,46 @@ reverseIterateAndLogRecursively(n-1)
  
 function weirdDivisionWithFor(n) {
 
-  for (var i = 1 ; i < n; i++) {
-    
+    var name;
+  for (var i = 1 ; i <= n; i++) {
+    if (i%3===0) {
+      name ="Julia"
+    }
+      else if (i%5===0) {
+       name ="James"
+      }
+        else if (i%3===0 && i%5===0 ) {
+          name ="JuliaJames"
+        }
+          else {name = n}
 
-
-
-    
-  }
+      
+  } return name
 
 }
-
 
 
 function weirdDivisionWithWhile(n) {
 
-  // TODO: your work goes here
+    var name;
+    var i=0 
+    while (i<=n) {
+        if (i%3===0) {
+      name ="Julia"
+    }
+      else if (i%5===0) {
+       name ="James"
+      }
+        else if (i%3===0 && i%5===0 ) {
+          name ="JuliaJames"
+        }
+          else {name = n}
 
-}
+      i++
+  } return name
+        
+    }
+  
  
 
  now recursively do the same function but looping from n to 1 instead of 1 to n
@@ -122,9 +145,26 @@ function weirdDivisionWithWhile(n) {
 
 function inverseWeirdDivisionRecursively(n) {
 
-  // TODO: your work goes here
+if (n===1) {
+    return 
+    }
+    
+   if (n%3===0) {
+      return "Julia"
+    }
+      else if (n%5===0) {
+       return "James"
+      }
+        else if (n%3===0 && i%5===0 ) {
+          return "JuliaJames"
+        }
+          else {return  n}
+
+inverseWeirdDivisionRecursively(n-1) 
 
 }
+
+
  
 
 /*****************************  4  ***********************/
@@ -136,24 +176,34 @@ function inverseWeirdDivisionRecursively(n) {
 
 function laughWithFor(number) {
 
-  // TODO: your work goes here
-
+var string =''
+  for (var i = 0; i < number  ; i++) {
+    string = string + 'ha'
 }
-
+return string
+}
 
 
 function laughWithWhile(number) {
+    
+var string =''
+var i =0
+    while (i< number) {
+        string = string + 'ha'
+        i++
+    }
 
-  // TODO: your work goes here
-
+return string
 }
-
 
 
 function laughRecursively(number) {
 
-  // TODO: your work goes here
+ if (number === 0) {
+  return ''
+ }
 
+return 'ha' + laughRecursively(number-1)
 }
  
 
@@ -162,20 +212,34 @@ function laughRecursively(number) {
  Create a function that calculates the sum of a number as follows:
  factorial(3); => 3+2+1 = 6
  factorial(5); => 5+4+3+2+1 = 15
+
 function sumWithWhile(number) {
 
-  // TODO: your work goes here
+var result=0
 
+var i = 1
+ 
+ while (i <= number) {
+  result = result + i
+  i++
+ }
+  return result
 }
 
 
 
 function sumWithFor(number) {
 
-  // TODO: your work goes here
+  var result=0
+
+  for (var i = 1; i <= number; i++) {
+ 
+ result = result + i 
+    
+  } 
+  return result 
 
 }
- 
 /*****************************  6  ***********************/
  Using recursion
  Create a function that calculates the factorial of a number
@@ -183,7 +247,11 @@ function sumWithFor(number) {
  factorial(5); => 5*4*3*2*1 = 120
 function factorialRecursively(number) {
 
-  // TODO: your work goes here
+  if (number ===0) {
+    return 0
+  }
+
+  return number+ factorialRecursively(number-1)
 
 }
  
@@ -198,16 +266,30 @@ function factorialRecursively(number) {
 
 function rangeFor(min, max) {
 
-  // TODO: your work goes here
+var array = []
+var x =0
 
+ for (var i = min ; i < max ; i++) {
+   array [x]=i
+   x++
+ }
+return array
 }
 
 
 
 function rangeWhile(min, max) {
 
-  // TODO: your work goes here
+var array =[]
+var i = min
+var x=0
 
+while (i<max){
+  array[x] = i
+  x++
+  i++
+}
+return array
 }
  
 
@@ -220,7 +302,7 @@ function rangeWhile(min, max) {
 
 function reverseWithWhile(str) {
 
-  // TODO: your work here
+ 
 
 }
 
@@ -228,7 +310,11 @@ function reverseWithWhile(str) {
 
 function reverseWithFor(str) {
 
-  // TODO: your work here
+var array = str.split("")
+
+for (var i = array.length-1; i <=0 ; i--) {
+  return array [i]
+}
 
 }
 
